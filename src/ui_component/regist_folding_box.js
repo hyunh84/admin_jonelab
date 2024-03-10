@@ -10,6 +10,8 @@ const RegFoldItemBox = ({children, title, helpTip, tooltip, essential, closed}) 
 	const [openConts, setOpenConts] = useState(closed ? false : true);//false 닫힘, true:열림
 	const [openHelpTip, setOpenHelpTip] = useState(false);
 
+	console.log(children);
+
 	const openHelpTipFn = (e)=>{
 		e.stopPropagation();
 		setOpenHelpTip(true)
@@ -77,7 +79,7 @@ RegFoldItemBox.propTypes = {
 	essential : PropTypes.any,
 	helpTip : PropTypes.any,
 	tooltip : PropTypes.any,
-	children : PropTypes.any.isRequired,
+	children : PropTypes.node.isRequired,
 	title : PropTypes.string.isRequired,
 }
 

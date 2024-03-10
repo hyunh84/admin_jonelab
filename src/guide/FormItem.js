@@ -196,12 +196,12 @@ const FormItem = () => {
 				/>
 			</RegFoldItemBox>
 
-			<RegFoldItemBox
+			{/* <RegFoldItemBox
 				title={'select style'}
 				// helpTip={true}
 			>
 				
-			</RegFoldItemBox>
+			</RegFoldItemBox> */}
 		</div>
 	);
 }
