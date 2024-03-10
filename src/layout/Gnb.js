@@ -1,8 +1,5 @@
 import React, {useRef, useEffect, useContext} from 'react';
 import { Link } from 'react-router-dom';
-// import SimpleBar from 'simplebar-react';
-import Selectbox from 'ui_component/selectbox';
-import Searchbox from 'ui_component/searchbox';
 import {GState} from 'Router/GState';
 
 const Gnb = () => {
@@ -101,6 +98,7 @@ const Gnb = () => {
 									<li><Link to="form_item">form item guide</Link></li>
 									<li><Link to="table_item">table item guide</Link></li>
 									<li><Link to="tab_item">tab item guide</Link></li>
+									<li><Link to="PopupSample01">popup guide</Link></li>
 								</ul>
 							</div>
 						</li>
