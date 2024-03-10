@@ -1,20 +1,27 @@
-import React, {useEffect, useState} from 'react';
+import React, {useRef, useEffect} from 'react';
 import PropTypes from 'prop-types';
 
 const Buttons = ({name, typeName = 'button', txt, clickCall, blind, children}) => {
-	const btnClick = (e)=>{
-		if(clickCall) {
-			e.stopPropagation();
-			clickCall(e);
-		}
+	const el = useRef(null);
+
+	const clickFn = (e)=>{
+		if(clickCall) clickCall(e);
 	}
+
+	useEffect(()=>{
+		el.current.addEventListener('click', clickFn);
+
+		return ()=>{
+			if(el.current !== null) el.current.removeEventListener('click', clickFn);
+		}
+	}, [txt]);
 
 
 	if(children !== undefined) {
-		return <button type={typeName} className={name} onClick={btnClick}>{children}</button>
+		return <button type={typeName} className={name} ref={el}>{children}</button>
 	}
 
-	return <button type={typeName} className={name} onClick={btnClick}><span className={blind && 'blind'}>{txt}</span></button>
+	return <button type={typeName} className={name} ref={el}><span className={blind && 'blind'}>{txt}</span></button>
 }
 
 Buttons.propTypes = {

@@ -244,7 +244,6 @@
 /**************************************************************************************
 ** Layer Popup
 **************************************************************************************/
-.layerMask {position:fixed;left:0;top:0;right:0;bottom:0;background-color:rgba(0, 0, 0, 0.6);z-index:100;}
 [class^="layerWrap"] {position:fixed;left:0;top:0;width:100%;height:100%;background-color:rgba(0, 0, 0, .6);z-index:100;}
 [class^="layerWrap"] [class^="layerMask"] {position:fixed;left:0;top:0;width:100%;height:100%;background-color:transparent;}
 [class^="layerWrap"] [class^="layerBox"] {position:fixed;left:50%;top:50%;width:400px;background-color:#3772ea;opacity:0;transform:translate(-50%, -50%);transition:opacity 400ms ease;}
@@ -253,9 +252,3 @@
 [class^="layerWrap"] [class^="btnLayerClose"] {position:absolute;right:10px;top:6px;width:40px;height:40px;background-color:pink;}
 
 [class^="layerWrap"].open [class^="layerBox"] {opacity:1;}
-
-/* [class^="layerWrap"] .layerConts {padding:20px;}
-[class^="layerWrap"] [class^="btnCloseLayer"] {position:absolute;right:10px;top:6px;width:40px;height:40px;}
-[class^="layerWrap"] [class^="btnCloseLayer"]:before {display:block;content:"";position:absolute;left:50%;top:50%;width:30px;height:2px;background-color:#fff;transform:translate(-50%, -50%) rotate(45deg);}
-[class^="layerWrap"] [class^="btnCloseLayer"]:after {display:block;content:"";position:absolute;left:50%;top:50%;width:30px;height:2px;background-color:#fff;transform:translate(-50%, -50%) rotate(-45deg);}
-[class^="layerWrap"] [class^="btnCloseLayer"] em {display:block;overflow:hidden;width:0;height:0;line-height:0;} */

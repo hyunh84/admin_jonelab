@@ -5,7 +5,8 @@ import Buttons from 'ui_component/buttons'
 
 const Layer = ({children, blindHeader, layerTitle, name, idName, setClose}) => {
 
-	const closeLayerFn = ()=>{
+	const closeLayerFn = (e)=>{
+		e.stopPropagation();
 		setClose(false);
 	}
 
