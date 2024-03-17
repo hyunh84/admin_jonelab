@@ -5,6 +5,8 @@ const Buttons = ({name, typeName = 'button', txt, clickCall, blind, children}) =
 	const el = useRef(null);
 
 	const clickFn = (e)=>{
+		e.thisEl = el.current;
+
 		if(clickCall) clickCall(e);
 	}
 

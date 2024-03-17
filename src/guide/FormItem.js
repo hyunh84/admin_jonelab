@@ -8,12 +8,19 @@ import RadioButtonBox from 'ui_component/radiobuttonbox';
 import InputTxt from 'ui_component/input_txt';
 import InputNum from 'ui_component/input_num';
 import PeriodSett from 'ui_component/period_setting';
+import Buttons from 'ui_component/buttons';
 
 const FormItem = () => {
 	
-	var [checkState, setCheckState] = useState(null);//checkbox 중복 선택 가능으로 state에 배열로 value값 저장
-	var [radioState, setRadioState] = useState(null);//radio 단일 선택 선택한 value값 저장
-	var [btnRadioState, setBtnRadioState] = useState(null);//button type radio 단일 선택 선택한 value값 저장
+	const [checkState, setCheckState] = useState(null);//checkbox 중복 선택 가능으로 state에 배열로 value값 저장
+	const [radioState, setRadioState] = useState(null);//radio 단일 선택 선택한 value값 저장
+	const [btnRadioState, setBtnRadioState] = useState(null);//button type radio 단일 선택 선택한 value값 저장
+
+	const btnClickFn = (e, el)=>{
+		var el = e.thisEl;
+		var txt = el.querySelector('span').innerText;
+		console.log(`button click callBack ========== ${txt}`);
+	}
 
 	useEffect(()=> {
 		console.log(`checkState = ${checkState}`);
@@ -45,9 +52,10 @@ const FormItem = () => {
 				<div>
 					<p>높이 : 32px</p>
 					<br />
-					<button type="button" className="btnItem"><span>btnItem button</span></button>
-					<button type="button" className="btnItem02"><span>btnItem02 button</span></button>
-					<button type="button" className="btnItem03"><span>btnItem03 button</span></button>
+					<Buttons name="btnItem" txt="btnItem button" clickCall={btnClickFn} />
+					<Buttons name="btnItem02" txt="btnItem02 button" clickCall={btnClickFn} />
+					<Buttons name="btnItem03" txt="btnItem03 button" clickCall={btnClickFn} />
+					
 					<br /><br />
 					<Link to="#" className="btnItem"><span>btnItem anchor</span></Link>
 					<Link to="#" className="btnItem02"><span>btnItem02 anchor</span></Link>
